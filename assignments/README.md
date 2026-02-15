@@ -5,6 +5,18 @@ Web services and applications ATU course
 
 Carmine Giardino
 
+## Installation
+
+**Requirements**: Python 3.6 or higher
+
+Before running any assignments, install the required dependencies:
+
+```bash
+pip3 install -r requirements.txt
+```
+
+This will install all necessary Python packages needed for the assignments.
+
 ## Table of Contents
 
 - [Assignment 2: Card Draw Game](#assignment-2-card-draw-game)
@@ -27,12 +39,6 @@ A Python program that uses the [Deck of Cards API](https://deckofcardsapi.com/) 
 - **Multiplayer Support**: Play with 1–10 players from the same deck
 - **Winner Determination**: Compares all hands and announces the winner with the winning hand type
 - **Tie Handling**: Properly handles ties between multiple players
-
-### Requirements
-
-- Python 3.6 or higher
-- Internet connection (to access the Deck of Cards API)
-- No external dependencies required (uses only Python standard library)
 
 ### How to Run
 
@@ -137,3 +143,4 @@ A Python program that retrieves the dataset for the "exchequer account (historic
 ```bash
 python3 assignment3-cso.py
 ```
+
