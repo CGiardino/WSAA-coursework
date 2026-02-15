@@ -122,3 +122,12 @@ If you encounter other network errors:
 - Check your internet connection
 - The Deck of Cards API may be temporarily unavailable
 - Try running the program again after a few moments
+
+## Assignment 3:
+
+A Python program that retrieves the dataset for the "exchequer account (historical series)" from the CSO, and stores it into a file called "cso.json".
+
+### How to Run
+```bash
+python3 assignment3-cso.py
+```
