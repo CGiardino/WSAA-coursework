@@ -1,3 +1,6 @@
+# Assignment 2: Card Draw - Draw 5 cards for each player and evaluate the hand
+# Author: Carmine Giardino
+
 #!/usr/bin/env python3
 import json
 import sys
