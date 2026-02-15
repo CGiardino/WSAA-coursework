@@ -4,6 +4,12 @@ Web services and applications ATU course
 ### Author
 
 Carmine Giardino
+
+## Table of Contents
+
+- [Assignment 2: Card Draw Game](#assignment-2-card-draw-game)
+- [Assignment 3: CSO dataset retrieval](#assignment-3-cso-dataset-retrieval)
+
 ## Assignment 2: Card Draw Game
 
 A Python program that uses the [Deck of Cards API](https://deckofcardsapi.com/) to simulate dealing cards and playing a multiplayer card game.
@@ -123,7 +129,7 @@ If you encounter other network errors:
 - The Deck of Cards API may be temporarily unavailable
 - Try running the program again after a few moments
 
-## Assignment 3:
+## Assignment 3: CSO dataset retrieval
 
 A Python program that retrieves the dataset for the "exchequer account (historical series)" from the CSO, and stores it into a file called "cso.json".
 
