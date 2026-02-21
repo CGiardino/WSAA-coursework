@@ -151,25 +151,29 @@ A Python program that reads a README from a GitHub repository, replaces whole wo
 
 ### Configuration
 
-Edit the dictionaries in your `config.py` file:
+1. **GitHub Token**: Add your token to `config.py`:
+   ```python
+   api_keys = {
+       'github_aprivateone': 'your_github_token_here'
+   }
+   ```
 
-```python
-api_keys = {
-    'github_aprivateone': 'your_github_token_here'
-}
-
-assignment04_github_config = {
-    'repo_owner': 'your-username',
-    'repo_name': 'your-repo',
-    'file_path': 'README.md',
-    'old_text': 'OldWord',
-    'new_text': 'NewWord',
-    'encoding': 'utf-8'
-}
-```
+2. **Script Settings**: See variables in `assignment04-github.py`:
+   ```python
+   REPO_OWNER = 'your-username'
+   REPO_NAME = 'your-repo'
+   FILE_PATH = 'README.md'
+   OLD_TEXT = 'OldWord'
+   NEW_TEXT = 'NewWord'
+   ENCODING = 'utf-8'
+   ```
 
 ### How to Run
 
 ```bash
 python3 assignment04-github.py
 ```
+
+The script will show the number of matches found and push the changes to GitHub.
+
+**Note**: Uses regex word boundaries (`\b`) to replace only whole words. For example, replacing "Andrew" won't affect "Andrews" or "Andrew's".

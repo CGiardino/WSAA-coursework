@@ -1,4 +1,4 @@
-# Read a file from a Github repo, replace text (as a whole word), and push the changes back.
+# Reads a file from a Github repo, replace text (as a whole word), and push the changes back.
 # Author: Carmine Giardino
 
 import requests
@@ -6,16 +6,15 @@ import json
 import base64
 import re
 from config import api_keys
-from config import assignment04_github_config as conf
 
 # Configuration
 GITHUB_TOKEN = api_keys['github_aprivateone']
-REPO_OWNER = conf['repo_owner']
-REPO_NAME = conf['repo_name']
-FILE_PATH = conf['file_path']
-OLD_TEXT = conf['old_text']
-NEW_TEXT = conf['new_text']
-ENCODING = conf['encoding']
+REPO_OWNER = 'CGiardino'
+REPO_NAME = 'aprivateone'
+FILE_PATH = 'README.md'
+OLD_TEXT = 'Andrew'
+NEW_TEXT = 'Carmine'
+ENCODING = 'utf-8'
 
 # GitHub API endpoints
 BASE_URL = f'https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}'
