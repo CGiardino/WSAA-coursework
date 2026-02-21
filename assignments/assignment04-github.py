@@ -66,6 +66,7 @@ def main():
     content, sha = get_file_content()
     
     if content is None:
+        print("Failed to retrieve file content. Exiting.")
         return
     
     print(f"File retrieved successfully")
