@@ -21,6 +21,7 @@ This will install all necessary Python packages needed for the assignments.
 
 - [Assignment 2: Card Draw Game](#assignment-2-card-draw-game)
 - [Assignment 3: CSO dataset retrieval](#assignment-3-cso-dataset-retrieval)
+- [Assignment 4: GitHub Text Replacer](#assignment-4-github-text-replacer)
 
 ## Assignment 2: Card Draw Game
 
@@ -144,3 +145,31 @@ A Python program that retrieves the dataset for the "exchequer account (historic
 python3 assignment3-cso.py
 ```
 
+## Assignment 4: GitHub Text Replacer
+
+A Python program that reads a README from a GitHub repository, replaces whole words, and pushes the changes back.
+
+### Configuration
+
+Edit the dictionaries in your `config.py` file:
+
+```python
+api_keys = {
+    'github_aprivateone': 'your_github_token_here'
+}
+
+assignment04_github_config = {
+    'repo_owner': 'your-username',
+    'repo_name': 'your-repo',
+    'file_path': 'README.md',
+    'old_text': 'OldWord',
+    'new_text': 'NewWord',
+    'encoding': 'utf-8'
+}
+```
+
+### How to Run
+
+```bash
+python3 assignment04-github.py
+```
