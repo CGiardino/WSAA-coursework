@@ -1,0 +1,197 @@
+openapi: 3.0.0
+info:
+  title: Book CRUD API
+  description: API for managing books with CRUD operations
+  version: 1.0.0
+servers:
+  - url: http://localhost:5000/api
+    description: Development server
+
+paths:
+  /books:
+    get:
+      summary: Get all books
+      description: Retrieve a list of all books
+      operationId: getAllBooks
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Book'
+        '500':
+          description: Internal server error
+          
+    post:
+      summary: Create a new book
+      description: Add a new book to the collection
+      operationId: createBook
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BookInput'
+      responses:
+        '201':
+          description: Book created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Book'
+        '400':
+          description: Invalid input
+        '500':
+          description: Internal server error
+          
+  /books/{id}:
+    get:
+      summary: Get a book by ID
+      description: Retrieve a specific book by its ID
+      operationId: getBookById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The ID of the book to retrieve
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Book'
+        '404':
+          description: Book not found
+        '500':
+          description: Internal server error
+          
+    put:
+      summary: Update a book
+      description: Update an existing book by its ID
+      operationId: updateBook
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The ID of the book to update
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BookInput'
+      responses:
+        '200':
+          description: Book updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Book'
+        '400':
+          description: Invalid input
+        '404':
+          description: Book not found
+        '500':
+          description: Internal server error
+          
+    delete:
+      summary: Delete a book
+      description: Delete a book by its ID
+      operationId: deleteBook
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The ID of the book to delete
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Book deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Book deleted successfully
+        '404':
+          description: Book not found
+        '500':
+          description: Internal server error
+
+components:
+  schemas:
+    Book:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: The unique identifier for the book
+          example: 1
+        title:
+          type: string
+          description: The title of the book
+          example: "The Great Gatsby"
+        author:
+          type: string
+          description: The author of the book
+          example: "F. Scott Fitzgerald"
+        isbn:
+          type: string
+          description: The ISBN of the book
+          example: "978-0-7432-7356-5"
+        publishedYear:
+          type: integer
+          description: The year the book was published
+          example: 1925
+        genre:
+          type: string
+          description: The genre of the book
+          example: "Classic Fiction"
+        price:
+          type: number
+          format: float
+          description: The price of the book
+          example: 15.99
+          
+    BookInput:
+      type: object
+      required:
+        - title
+        - author
+      properties:
+        title:
+          type: string
+          description: The title of the book
+          example: "The Great Gatsby"
+        author:
+          type: string
+          description: The author of the book
+          example: "F. Scott Fitzgerald"
+        isbn:
+          type: string
+          description: The ISBN of the book
+          example: "978-0-7432-7356-5"
+        publishedYear:
+          type: integer
+          description: The year the book was published
+          example: 1925
+        genre:
+          type: string
+          description: The genre of the book
+          example: "Classic Fiction"
+        price:
+          type: number
+          format: float
+          description: The price of the book
+          example: 15.99
